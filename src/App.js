@@ -8,6 +8,7 @@ import Shop from './Page/Shop/Shop';
 import InUp from './Page/Sign/InUp';
 import {connect} from 'react-redux';
 import {setCurrentUser} from './redux/user/userAction'
+import CheckOut from './redux/cart/CheckOut/CheckOut';
 class App extends React.Component {
   
 
@@ -45,6 +46,8 @@ class App extends React.Component {
         <Route exact path="/sign" render={()=>
           this.props.currentUser?<Redirect to="/" />:<InUp/>
         }/>
+        <Route exact path="/checkout" component={CheckOut}/>
+        
         </Switch>
       </div>
     );
